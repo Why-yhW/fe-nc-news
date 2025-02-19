@@ -25,13 +25,13 @@ function Articles() {
       <section className="articles">
         {articles.map((article) => {
           return (
-            <div className="article_card" key={article.article_id}>
+            <button className="article_card" key={article.article_id}>
               <h4>{article.title}</h4>
               <img src={article.article_img_url} alt="" />
               <p>Created at: {article.created_at.slice(0, 10)}</p>
               <h4>Author: {article.author}</h4>
               <h4>Topic: {article.topic}</h4>
-            </div>
+            </button>
           );
         })}
       </section>

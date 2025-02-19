@@ -4,6 +4,7 @@ import "./App.css";
 // imports from the components folder
 import Header from "./components/Header.jsx";
 import Articles from "./components/Articles.jsx";
+import Home from "./components/Home.jsx";
 
 function App() {
   return (
