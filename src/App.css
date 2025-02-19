@@ -1,11 +1,10 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  margin: 2%;
   padding: 2rem;
   text-align: center;
 }
 
-.logo {
+/* .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -16,9 +15,9 @@
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
-}
+} */
 
-@keyframes logo-spin {
+/* @keyframes logo-spin {
   from {
     transform: rotate(0deg);
   }
@@ -31,10 +30,31 @@
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
+} */
 
 .card {
   padding: 2em;
+}
+
+.articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(352px, 1fr));
+  gap: 10px;
+}
+
+.article_card {
+  border-color: aqua;
+  border-radius: 2em;
+  border-style: solid;
+  margin-bottom: 2em;
+}
+
+.article_card > img {
+  border-radius: 25px;
+  width: auto;
+  height: auto;
+  max-width: 60%;
+  max-height: 60%;
 }
 
 .read-the-docs {

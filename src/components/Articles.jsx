@@ -1,0 +1,42 @@
+import { fetchArticles } from "./apiCall";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router";
+
+function Articles() {
+  const [articles, setArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [params, setParams] = useSearchParams();
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetchArticles().then((articleData) => {
+      setArticles(articleData);
+      setIsLoading(false);
+    });
+  }, []);
+
+  if (isLoading) {
+    return <h3>Articles Loading...</h3>;
+  }
+  return (
+    <>
+      <h2>Articles</h2>
+      <section className="articles">
+        {articles.map((article) => {
+          return (
+            <div className="article_card" key={article.article_id}>
+              <h4>{article.title}</h4>
+              <img src={article.article_img_url} alt="" />
+              <p>Created at: {article.created_at.slice(0, 10)}</p>
+              <h4>Author: {article.author}</h4>
+              <h4>Topic: {article.topic}</h4>
+            </div>
+          );
+        })}
+      </section>
+    </>
+  );
+}
+
+export default Articles;
