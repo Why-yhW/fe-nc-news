@@ -11,3 +11,11 @@ export const fetchArticles = (params) => {
       return articlesData;
     });
 };
+
+export const fetchArticlesById = ({ article_id }) => {
+  return apiLink
+    .get("/articles/" + article_id)
+    .then(({ data: { article: articlesData } }) => {
+      return articlesData;
+    });
+};
