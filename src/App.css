@@ -57,6 +57,36 @@ img {
   max-height: 60%;
 }
 
+.article > h6 {
+  margin: 5px;
+}
+
+.comments {
+  text-align: left;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(352px, 1fr));
+  gap: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-color: rgb(17, 155, 102);
+  border-style: solid;
+  border-radius: 25px;
+}
+
+.comment_card {
+  margin-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-color: rgb(17, 155, 155);
+  border-style: solid;
+  border-radius: 25px;
+}
+
+.comment_card_internal {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 .read-the-docs {
   color: #888;
 }
