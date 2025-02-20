@@ -27,3 +27,17 @@ export const fetchCommentsByArticleId = (article_id) => {
       return commentsData;
     });
 };
+
+export const patchArticleVotes = (params) => {
+  return apiLink
+    .patch("/articles/" + params.article_id, { inc_votes: `${params.vote}` })
+    .then(
+      ({
+        data: {
+          article: { votes: voteData },
+        },
+      }) => {
+        return voteData;
+      }
+    );
+};
