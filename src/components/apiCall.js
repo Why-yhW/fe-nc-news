@@ -20,7 +20,7 @@ export const fetchArticlesById = ({ article_id }) => {
     });
 };
 
-export const fetchCommentsByArticleId = ({ article_id }) => {
+export const fetchCommentsByArticleId = (article_id) => {
   return apiLink
     .get("/articles/" + article_id + "/comments")
     .then(({ data: { comments: commentsData } }) => {
