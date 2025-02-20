@@ -19,3 +19,11 @@ export const fetchArticlesById = ({ article_id }) => {
       return articlesData;
     });
 };
+
+export const fetchCommentsByArticleId = ({ article_id }) => {
+  return apiLink
+    .get("/articles/" + article_id + "/comments")
+    .then(({ data: { comments: commentsData } }) => {
+      return commentsData;
+    });
+};
