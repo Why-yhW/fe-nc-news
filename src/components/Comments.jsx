@@ -29,7 +29,7 @@ function Comments(props) {
             <h4 className="comment_card_internal">Author: {comment.author}</h4>
             <h5 className="comment_card_internal">Created at: {articleDate}</h5>
             <p className="comment_card_internal">Comment: {comment.body}</p>
-            <h6 className="comment_card_internal">Votes: {comment.votes}</h6>
+            <h5 className="comment_card_internal">Votes: {comment.votes}</h5>
           </div>
         );
       })}

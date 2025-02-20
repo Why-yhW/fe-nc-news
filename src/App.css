@@ -82,6 +82,10 @@ img {
   border-radius: 25px;
 }
 
+.votes {
+  padding: 0px;
+}
+
 .comment_card_internal {
   margin-top: 5px;
   margin-bottom: 5px;
