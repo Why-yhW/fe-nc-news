@@ -22,7 +22,7 @@ function Article() {
       .then((commentsData) => {
         setComments(commentsData);
       });
-  }, []);
+  }, [params]);
 
   if (isLoading) {
     return <h2>Articles Loading...</h2>;

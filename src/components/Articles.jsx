@@ -14,7 +14,7 @@ function Articles() {
       setArticles(articleData);
       setIsLoading(false);
     });
-  }, []);
+  }, [params]);
 
   if (isLoading) {
     return <h3>Articles Loading...</h3>;
