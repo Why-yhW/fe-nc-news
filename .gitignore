@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 *.svg
+
+# Local Netlify folder
+.netlify
