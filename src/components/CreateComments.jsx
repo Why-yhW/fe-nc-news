@@ -17,6 +17,10 @@ function CreateComment(props) {
     e.preventDefault();
     setNewCommentDisplay(false);
     setIsLoading(true);
+    postNewCommentByArticleId({
+      username: "grumpy19",
+      body: e.target[0].value,
+    }).then(() => {});
   }
 
   if (isLoading)
