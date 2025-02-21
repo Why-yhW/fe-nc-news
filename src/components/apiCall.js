@@ -41,3 +41,14 @@ export const patchArticleVotes = (params) => {
       }
     );
 };
+
+export const postNewCommentByArticleId = (params) => {
+  return apiLink
+    .post("/articles/" + params.article_id + "/comments", {
+      username: params.username,
+      body: params.body,
+    })
+    .then((data) => {
+      console.log(data);
+    });
+};

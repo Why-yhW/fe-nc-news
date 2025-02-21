@@ -8,6 +8,8 @@ function Articles() {
 
   const [params, setParams] = useSearchParams();
 
+  console.log(document.getElementById("username"));
+
   useEffect(() => {
     setIsLoading(true);
     fetchArticles(params).then((articleData) => {

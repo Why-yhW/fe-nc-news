@@ -1,9 +1,17 @@
 import { fetchCommentsByArticleId } from "./apiCall";
 import { useState, useEffect } from "react";
+import CreateComment from "./CreateComments";
 
 function Comments(props) {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [newCommentButton, setNewCommentButton] = useState(false);
+  const [newCommentDisplay, setNewCommentDisplay] = useState(false);
+
+  function createComment() {
+    setNewCommentButton(true);
+    setNewCommentDisplay(true);
+  }
 
   useEffect(() => {
     setIsLoading(true);
@@ -20,6 +28,18 @@ function Comments(props) {
   return (
     <section className="comments">
       <h2>Comments</h2>
+      <button
+        disabled={newCommentButton}
+        className="create_new_comment"
+        onClick={createComment}
+        hidden={newCommentButton}
+      >
+        Create New Comment
+      </button>
+      <CreateComment
+        newCommentDisplay={newCommentDisplay}
+        articleId={props.articleId}
+      />
       {comments.map((comment) => {
         const articleDate = new Date(comment.created_at).toLocaleDateString(
           "en-GB"
