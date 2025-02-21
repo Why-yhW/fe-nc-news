@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import Comments from "./Comments";
 import Votes from "./Votes";
+import CreateComment from "./CreateComments";
 
 function Article() {
   const [article, setArticle] = useState([]);
@@ -37,7 +38,11 @@ function Article() {
         <h6>Created at: {articleDate}</h6>
         <Votes vote={article.votes} articleId={params.article_id} />
       </section>
-      <Comments articleId={params.article_id} />
+      <section className="comments">
+        <h2>Comments</h2>
+        <CreateComment articleId={params.article_id} />
+        <Comments articleId={params.article_id} />
+      </section>
     </>
   );
 }

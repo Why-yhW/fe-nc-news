@@ -9,11 +9,11 @@ function CreateComment(props) {
   const [isHidden, setIsHidden] = useState(true);
   const urlEnd = `/articles/${props.articleId}`;
 
-  function postComment(e) {
+  function postComment(bodyData) {
     postNewCommentByArticleId({
       article_id: props.articleId,
       username: "grumpy19",
-      body: e.target[0].value,
+      body: bodyData,
     }).then((data) => {
       console.log(data);
       if (data.status === 201) {
@@ -34,7 +34,7 @@ function CreateComment(props) {
   function handleSubmit(e) {
     setIsLoading(true);
     setIsHidden(true);
-    postComment(e);
+    postComment(e.target[0].value);
   }
 
   function createComment() {

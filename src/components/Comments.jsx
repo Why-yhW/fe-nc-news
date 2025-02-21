@@ -1,6 +1,5 @@
 import { fetchCommentsByArticleId } from "./apiCall";
 import { useState, useEffect } from "react";
-import CreateComment from "./CreateComments";
 import DeletingComments from "./DeletingComment";
 
 function Comments(props) {
@@ -25,9 +24,7 @@ function Comments(props) {
   }
 
   return (
-    <section className="comments">
-      <h2>Comments</h2>
-      <CreateComment articleId={props.articleId} />
+    <>
       {comments.map((comment) => {
         const articleDate = new Date(comment.created_at).toLocaleDateString(
           "en-GB"
@@ -53,7 +50,7 @@ function Comments(props) {
           </div>
         );
       })}
-    </section>
+    </>
   );
 }
 
