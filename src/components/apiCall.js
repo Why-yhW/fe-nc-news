@@ -47,3 +47,14 @@ export const deletingCommentUsingUser = (props) => {
     return data.status;
   });
 };
+
+export const postNewCommentByArticleId = (params) => {
+  return apiLink
+    .post("/articles/" + params.article_id + "/comments", {
+      username: params.username,
+      body: params.body,
+    })
+    .then((data) => {
+      return data;
+    });
+};

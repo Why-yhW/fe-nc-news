@@ -4,33 +4,21 @@
   text-align: center;
 }
 
-/* .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.loading_symbol {
+  margin: 0px;
+  width: 25px;
+  height: 25px;
+  animation: spin 1s infinite linear;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-} */
 
-/* @keyframes logo-spin {
+@keyframes spin {
   from {
-    transform: rotate(0deg);
+    transform: scale(1) rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: scale(1) rotate(360deg);
   }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-} */
 
 .card {
   padding: 2em;
@@ -75,6 +63,7 @@ img {
 
 .comment_card {
   margin-bottom: 20px;
+  margin-top: 20px;
   padding-left: 15px;
   padding-right: 15px;
   border-color: rgb(17, 155, 155);
@@ -96,6 +85,10 @@ img {
 
 .votes {
   padding: 0px;
+}
+
+#new_comment {
+  width: 50%;
 }
 
 .comment_card_internal {

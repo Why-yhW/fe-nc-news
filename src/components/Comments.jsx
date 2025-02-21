@@ -1,18 +1,12 @@
 import { fetchCommentsByArticleId } from "./apiCall";
 import { useState, useEffect } from "react";
-import { getCurrentUser } from "./Home";
+import CreateComment from "./CreateComments";
 import DeletingComments from "./DeletingComment";
 
 function Comments(props) {
-  const currentUser = getCurrentUser();
-  const [isDisabled, setIsDisabled] = useState(false);
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [reload, setReload] = useState(0);
-
-  function forceReload() {
-    setReload(reload + 1);
-  }
+  const [newCommentButton, setNewCommentButton] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
@@ -22,6 +16,10 @@ function Comments(props) {
     });
   }, [props]);
 
+  function getIsHidden() {
+    return newCommentButton;
+  }
+
   if (isLoading) {
     return <h2>Comments Loading...</h2>;
   }
@@ -29,6 +27,7 @@ function Comments(props) {
   return (
     <section className="comments">
       <h2>Comments</h2>
+      <CreateComment articleId={props.articleId} />
       {comments.map((comment) => {
         const articleDate = new Date(comment.created_at).toLocaleDateString(
           "en-GB"
