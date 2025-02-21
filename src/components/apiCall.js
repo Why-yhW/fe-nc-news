@@ -42,6 +42,12 @@ export const patchArticleVotes = (params) => {
     );
 };
 
+export const deletingCommentUsingUser = (props) => {
+  return apiLink.delete("/comments/" + props.comment_id).then((data) => {
+    return data.status;
+  });
+};
+
 export const postNewCommentByArticleId = (params) => {
   return apiLink
     .post("/articles/" + params.article_id + "/comments", {
