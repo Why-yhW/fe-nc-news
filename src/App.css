@@ -82,6 +82,18 @@ img {
   border-radius: 25px;
 }
 
+.flex {
+  display: flex;
+}
+
+.delete_button {
+  text-align: center;
+  margin-top: 5px;
+  margin-left: 20px;
+  width: min-content;
+  height: min-content;
+}
+
 .votes {
   padding: 0px;
 }

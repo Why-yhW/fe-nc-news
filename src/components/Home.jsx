@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router";
 
 function Home() {
@@ -15,5 +16,10 @@ function Home() {
     </div>
   );
 }
+
+export const getCurrentUser = () => {
+  const [currentUser, setCurrentUser] = useState("grumpy19");
+  return currentUser;
+};
 
 export default Home;
