@@ -55,6 +55,6 @@ export const postNewCommentByArticleId = (params) => {
       body: params.body,
     })
     .then((data) => {
-      console.log(data);
+      return data;
     });
 };
